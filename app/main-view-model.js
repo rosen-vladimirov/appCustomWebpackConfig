@@ -1,5 +1,5 @@
 const Observable = require("tns-core-modules/data/observable").Observable;
-
+const fileSystem = require("tns-core-modules/file-system");
 function getMessage(counter) {
     if (counter <= 0) {
         return "Hoorraaay! You unlocked the NativeScript clicker achievement!";
@@ -15,7 +15,10 @@ function createViewModel() {
 
     viewModel.onTap = () => {
         viewModel.counter--;
-        viewModel.set("message", getMessage(viewModel.counter));
+        const txtFilePath = fileSystem.path.join(fileSystem.knownFolders.currentApp().path, "my-custom-dir", "resources.txt");
+        const content = fileSystem.File.fromPath(txtFilePath).readTextSync();
+
+        viewModel.set("message", content);
     };
 
     return viewModel;

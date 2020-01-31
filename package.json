@@ -16,7 +16,7 @@
     "tns-core-modules": "~6.3.0"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "~1.4.0"
+    "nativescript-dev-webpack": "1.5.0-rc-2020-01-30-180259-01"
   },
   "gitHead": "fa98f785df3fba482e5e2a0c76f4be1fa6dc7a14",
   "readme": "NativeScript Application"
